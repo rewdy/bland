@@ -1,0 +1,118 @@
+/**
+ * @file
+ * Primary Stylesheet
+*/
+
+// VARIABLES
+// Layout
+$grid-columns:12;
+$grid-gutter:3em;
+$breakpoint-sm:640px;
+$breakpoint-md:1024px;
+$breakpoint-lg:1460px;
+
+// Type
+$font-size:18px;
+$lg-font-size:20px;
+$sm-font-size:16px;
+$font-small:0.8em;
+$font-large:1.3em;
+$font-family:"freight-text-pro", serif;
+$alt-font:"freight-sans-pro", sans-serif; // this is for an alternative font
+$font-weight-light:200;
+$font-weight-normal:400;
+$font-weight-bold:600;
+$font-weight-black:700;
+$font-scale:1.7;
+$line-height:$font-scale + em;
+
+// Colors
+$page-background:#fff;
+$footer-background:#3c3c3c;
+
+$text-color:#333;
+$text-light:#999;
+
+$accent:#d4443f;
+$pop:#00a99c;
+$link-color:#47639e;
+$link-hover:#000;
+
+$line-color: #ddd;
+$heavy-line-color: #999;
+$screen: #e6e6e6;
+
+
+// STYLES
+// pull in all the mixins
+@import "modules/_mixins";
+
+// pull in core/resets
+@import "modules/_core";
+
+// pull in core type
+@import "modules/_type";
+
+// pull in form styles
+@import "modules/_forms";
+
+// pull in layout
+@import "modules/_layout";
+
+// pull in animation classes
+@import "modules/_animations";
+
+h1.site-title {
+	display:inline-block;
+	margin-right:1em;
+}
+
+.jump-list {
+	display:inline-block;
+	border:2px solid $line-color;
+	background-color:#fff;
+	li {
+		list-style:none;
+		margin:0;
+		position:relative;
+		a {
+			display:block;
+			padding:0.2em 0.75em;
+			font-family:$alt-font;
+			color:$text-color;
+			text-decoration:none;
+			&:hover {
+				background-color:$screen;
+			}
+		}
+		ul {
+			display:none;
+		}
+	}
+	&.open {
+		li ul {
+			display:block;
+			position:absolute;
+			top:100%;
+			left:0;
+			background-color:#fff;
+			border:2px solid $line-color;
+			border-top-width:1px;
+			transform:translateX(-2px);
+		}
+	}
+}
+
+#site-header .jump-list {
+	margin-bottom:0;
+}
+
+.label {
+	font-family:$alt-font;
+	font-weight:$font-weight-black;
+	text-transform:uppercase;
+	a {
+		color:inherit;
+		text-decoration:none;
+	}
+}

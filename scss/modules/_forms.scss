@@ -1,0 +1,155 @@
+/*	-----
+	Forms
+*/
+
+// basic form item container
+.form-item,
+.form-item fieldset {
+	margin:0 0 1em 0;
+}
+
+// basic fieldsets
+fieldset {
+	margin:0 0 $line-height 0;
+	padding:1em 1.25em 1em 1.25em;
+	border:1px solid $line-color;
+	position:relative;
+	legend {
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		padding:0.5em 1.25em;
+		display:block;
+		font-family:$alt-font;
+		font-weight:$font-weight-bold;
+		background-color:$screen;
+		+ * {
+			margin-top:2.5em!important;
+		}
+	}
+	p {
+		margin-bottom:1em;
+	}
+}
+
+// standard labels, legends for checkbox and radio arrays
+.form-item label,
+.form-item fieldset legend,
+fieldset.select legend {
+	display:block;
+	font-family:$alt-font;
+	font-weight:$font-weight-bold;
+}
+
+// grouped content for checkboxes
+.form-item fieldset,
+fieldset fieldset,
+fieldset.select {
+	margin:0;
+	padding:0;
+	border:0 none;
+	label {
+		display:block;
+		font-weight:$font-weight-normal;
+		cursor:pointer;
+	}
+	&.inline label {
+		display:inline;
+		margin-right:1em;
+	}
+}
+
+// standard input help
+.form-item .input-help,
+.form-item .help {
+	font-size:0.9em;
+	font-style:italic;
+}
+
+// inputs, textareas, selects, buttons
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password],
+textarea,
+select {
+	max-width:100%;
+	font-size:1em;
+	font-family:$font-family;
+	padding:0.4em;
+	border:1px solid $line-color;
+	outline: none;
+	&:focus {
+		border-color: $heavy-line-color;
+	}
+}
+input[type=text],
+input[type=email],
+input[type=password], {
+	width: 24em;
+}
+select {
+	border-radius:0;
+	min-width:12em;
+}
+button,
+a.button,
+input[type=submit],
+input[type=button],
+input[type=reset] {
+	display:inline-block;
+	font-size:1em;
+	line-height:1.5em;
+	font-family:$alt-font;
+	font-weight:$font-weight-normal;
+	padding:0.5em 1em 0.4em;
+	color:#fff;
+	background:$accent;
+	border:0 none;
+	cursor: pointer;
+	@include transition(background-color);
+	&:hover {
+		background-color:darken($accent, 7%);
+	}
+}
+button.reset,
+a.button.reset,
+input[type=reset] {
+	background-color:lighten($text-light, 25%);
+	color:$accent;
+	&:hover {
+		background-color:lighten($text-light, 30%);
+		color:$accent;
+	}
+}
+
+// some classes for variations
+div.submit {
+	padding-top:1em;
+	border-top:1px solid $line-color;
+}
+input.narrow {
+	width:10em;
+}
+input.long {
+	width:30em;
+}
+input.full {
+	width:100%;
+}
+
+// media specifics
+@media only screen and (max-width: $breakpoint-sm) {
+	input[type=text],
+	input[type=email],
+	input[type=number],
+	input[type=password],
+	input.long {
+		width:100%;
+	}
+	input.narrow {
+		width:45%;
+	}
+}
+

@@ -1,0 +1,919 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Primary Stylesheet
+*/
+/*	-----
+	Reset
+*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em,
+img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figure, figcaption, hgroup,
+menu, footer, header, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+article, aside, canvas, figure, figure img, figcaption, hgroup,
+footer, header, nav, section, audio, video {
+  display: block;
+}
+
+/*	----------
+	Essentials
+*/
+a {
+  color: #47639e;
+  transition: all 0.3s ease-out;
+}
+a:hover {
+  color: #000;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*	-------------------------- 
+	Type and other core styles
+*/
+body {
+  font-family: "freight-text-pro", serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.7em;
+  -webkit-font-smoothing: antialiased;
+}
+@media only screen and (min-width: 1460px) {
+  body {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: 1.581em;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+  font-size: 1em;
+}
+h1.page-title {
+  font-size: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 0.75em;
+  font-size: 2em;
+}
+
+h3 {
+  margin-bottom: 0.334em;
+  font-size: 1.5em;
+}
+
+h4 {
+  margin-bottom: 1.25em;
+  font-size: 1.2em;
+}
+
+h5 {
+  margin-bottom: 1.5em;
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+p, ul, ol, dl, blockquote, pre, table, address, figure {
+  margin: 0 0 1.7em 0;
+}
+
+ul li,
+ol li {
+  margin-left: 3.4em;
+}
+ul li ul,
+ul li ol,
+ol li ul,
+ol li ol {
+  margin-bottom: 0;
+}
+ul.inline li,
+ol.inline li {
+  margin: 0 0.85em 0 0;
+  display: inline;
+}
+ul.lined,
+ol.lined {
+  border-bottom: 1px solid #ddd;
+}
+ul.lined li,
+ol.lined li {
+  margin-left: 0;
+  list-style-position: inside;
+  padding: 0.25em 0.25em 0.25em 0.5em;
+  border-top: 1px solid #ddd;
+}
+ul.blocked li,
+ol.blocked li {
+  margin: 0;
+  list-style: none;
+}
+ul.blocked li a,
+ol.blocked li a {
+  display: block;
+  padding: 0.25em;
+}
+ul.blocked li a:hover,
+ol.blocked li a:hover {
+  background-color: #e6e6e6;
+}
+ul.blocked.lined li,
+ol.blocked.lined li {
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #ddd;
+}
+table caption {
+  font-style: italic;
+}
+table tr th, table tr td {
+  padding: 0.5em 1em 0.5em 0.5em;
+  border-bottom: 1px solid #ddd;
+}
+table tr th {
+  padding-top: 1em;
+  text-align: left;
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 600;
+  background-color: #f2f2f2;
+}
+table tr th a {
+  color: inherit;
+  text-decoration: none;
+}
+table.inline {
+  width: auto;
+}
+
+blockquote {
+  padding-left: 1.7em;
+  margin-left: 1.7em;
+  font-size: 1.15em;
+  line-height: 1.7em;
+  color: #999;
+  border-left: 1px solid #ddd;
+}
+blockquote p {
+  margin-bottom: 0.85em;
+}
+blockquote cite {
+  margin-top: 0.85em;
+  margin-right: 3.4em;
+  display: block;
+  text-align: right;
+}
+blockquote cite:before {
+  content: "– ";
+}
+
+code, pre {
+  padding: 0.2em;
+  font-size: 0.8em;
+  background-color: #e6e6e6;
+  color: #666666;
+}
+
+pre {
+  padding: 0.5em 0.8em;
+  white-space: pre-wrap;
+}
+
+acronym, abbr {
+  border-bottom: 1px dotted #999;
+  cursor: help;
+}
+
+figure {
+  float: left;
+  padding: 0.5em;
+  max-width: 100%;
+  border: 1px solid #ddd;
+}
+figure + * {
+  clear: left;
+}
+
+figcaption {
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  color: #999;
+  font-style: italic;
+  text-align: center;
+}
+
+hr {
+  margin: 1.7em 0;
+  border-top: 1px solid #ddd;
+}
+hr.narrow {
+  margin: 1.7em 25%;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+small,
+.small {
+  font-size: 0.8em;
+}
+
+big,
+.large,
+.big {
+  font-size: 1.3em;
+}
+
+/* Image and figure alignment */
+img.left,
+figure.left {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+
+img.right,
+figure.right {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+
+figure.left + *,
+figure.right + * {
+  clear: none;
+}
+
+@media only screen and (max-width: 640px) {
+  img.left, figure.left {
+    float: none;
+    margin: 0 0 1em 0;
+  }
+
+  figure.left,
+  figure.right {
+    float: left;
+  }
+  figure.left + *,
+  figure.right + * {
+    clear: left;
+  }
+}
+/* Special Styles */
+.attn {
+  margin-bottom: 1.7rem;
+  font-size: 1.3em;
+  line-height: 1.7em;
+}
+
+.intro {
+  padding: 0.5em;
+  margin-bottom: 1.7rem;
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 200;
+  font-size: 2.2em;
+  line-height: 1.7em;
+  text-transform: uppercase;
+  font-style: italic;
+  color: #fff;
+  background: #1f5c67;
+  background: linear-gradient(to bottom right, #107c7b 0%, #2f3c53 100%);
+}
+@media only screen and (max-width: 640px) {
+  .intro {
+    font-size: 1.8em;
+    line-height: 1.7em;
+  }
+}
+
+/*	-----
+	Forms
+*/
+.form-item,
+.form-item fieldset {
+  margin: 0 0 1em 0;
+}
+
+fieldset {
+  margin: 0 0 1.7em 0;
+  padding: 1em 1.25em 1em 1.25em;
+  border: 1px solid #ddd;
+  position: relative;
+}
+fieldset legend {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5em 1.25em;
+  display: block;
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 600;
+  background-color: #e6e6e6;
+}
+fieldset legend + * {
+  margin-top: 2.5em !important;
+}
+fieldset p {
+  margin-bottom: 1em;
+}
+
+.form-item label,
+.form-item fieldset legend,
+fieldset.select legend {
+  display: block;
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 600;
+}
+
+.form-item fieldset,
+fieldset fieldset,
+fieldset.select {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+.form-item fieldset label,
+fieldset fieldset label,
+fieldset.select label {
+  display: block;
+  font-weight: 400;
+  cursor: pointer;
+}
+.form-item fieldset.inline label,
+fieldset fieldset.inline label,
+fieldset.select.inline label {
+  display: inline;
+  margin-right: 1em;
+}
+
+.form-item .input-help,
+.form-item .help {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+input[type=text],
+input[type=email],
+input[type=number],
+input[type=password],
+textarea,
+select {
+  max-width: 100%;
+  font-size: 1em;
+  font-family: "freight-text-pro", serif;
+  padding: 0.4em;
+  border: 1px solid #ddd;
+  outline: none;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+textarea:focus,
+select:focus {
+  border-color: #999;
+}
+
+input[type=text],
+input[type=email],
+input[type=password] {
+  width: 24em;
+}
+
+select {
+  border-radius: 0;
+  min-width: 12em;
+}
+
+button,
+a.button,
+input[type=submit],
+input[type=button],
+input[type=reset] {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 400;
+  padding: 0.5em 1em 0.4em;
+  color: #fff;
+  background: #d4443f;
+  border: 0 none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+button:hover,
+a.button:hover,
+input[type=submit]:hover,
+input[type=button]:hover,
+input[type=reset]:hover {
+  background-color: #c4312c;
+}
+
+button.reset,
+a.button.reset,
+input[type=reset] {
+  background-color: #d9d9d9;
+  color: #d4443f;
+}
+button.reset:hover,
+a.button.reset:hover,
+input[type=reset]:hover {
+  background-color: #e6e6e6;
+  color: #d4443f;
+}
+
+div.submit {
+  padding-top: 1em;
+  border-top: 1px solid #ddd;
+}
+
+input.narrow {
+  width: 10em;
+}
+
+input.long {
+  width: 30em;
+}
+
+input.full {
+  width: 100%;
+}
+
+@media only screen and (max-width: 640px) {
+  input[type=text],
+  input[type=email],
+  input[type=number],
+  input[type=password],
+  input.long {
+    width: 100%;
+  }
+
+  input.narrow {
+    width: 45%;
+  }
+}
+/*	-----------------------
+	Layout (Grid and other)
+*/
+.grid:after,
+.row:after {
+  content: " ";
+  display: block;
+  clear: left;
+  height: 0;
+  overflow: hidden;
+}
+
+.g1 {
+  float: left;
+  padding: 1.5em;
+  width: 8.33333%;
+}
+
+.g2 {
+  float: left;
+  padding: 1.5em;
+  width: 16.66667%;
+}
+
+.g3 {
+  float: left;
+  padding: 1.5em;
+  width: 25%;
+}
+
+.g4 {
+  float: left;
+  padding: 1.5em;
+  width: 33.33333%;
+}
+
+.g5 {
+  float: left;
+  padding: 1.5em;
+  width: 41.66667%;
+}
+
+.g6 {
+  float: left;
+  padding: 1.5em;
+  width: 50%;
+}
+
+.g7 {
+  float: left;
+  padding: 1.5em;
+  width: 58.33333%;
+}
+
+.g8 {
+  float: left;
+  padding: 1.5em;
+  width: 66.66667%;
+}
+
+.g9 {
+  float: left;
+  padding: 1.5em;
+  width: 75%;
+}
+
+.g10 {
+  float: left;
+  padding: 1.5em;
+  width: 83.33333%;
+}
+
+.g11 {
+  float: left;
+  padding: 1.5em;
+  width: 91.66667%;
+}
+
+.g12 {
+  float: left;
+  padding: 1.5em;
+  width: 100%;
+}
+
+@media only screen and (max-width: 640px) {
+  .g1, .g2, .g3, .g4, .g5, .g6, .g7, .g8, .g9, .g10, .g11, .g12 {
+    float: none;
+    width: auto;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .gl1 {
+    float: left;
+    padding: 1.5em;
+    width: 8.33333%;
+  }
+
+  .gl2 {
+    float: left;
+    padding: 1.5em;
+    width: 16.66667%;
+  }
+
+  .gl3 {
+    float: left;
+    padding: 1.5em;
+    width: 25%;
+  }
+
+  .gl4 {
+    float: left;
+    padding: 1.5em;
+    width: 33.33333%;
+  }
+
+  .gl5 {
+    float: left;
+    padding: 1.5em;
+    width: 41.66667%;
+  }
+
+  .gl6 {
+    float: left;
+    padding: 1.5em;
+    width: 50%;
+  }
+
+  .gl7 {
+    float: left;
+    padding: 1.5em;
+    width: 58.33333%;
+  }
+
+  .gl8 {
+    float: left;
+    padding: 1.5em;
+    width: 66.66667%;
+  }
+
+  .gl9 {
+    float: left;
+    padding: 1.5em;
+    width: 75%;
+  }
+
+  .gl10 {
+    float: left;
+    padding: 1.5em;
+    width: 83.33333%;
+  }
+
+  .gl11 {
+    float: left;
+    padding: 1.5em;
+    width: 91.66667%;
+  }
+
+  .gl12 {
+    float: left;
+    padding: 1.5em;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 640px) and (max-width: 1024px) {
+  .gm1 {
+    float: left;
+    padding: 1.5em;
+    width: 8.33333%;
+  }
+
+  .gm2 {
+    float: left;
+    padding: 1.5em;
+    width: 16.66667%;
+  }
+
+  .gm3 {
+    float: left;
+    padding: 1.5em;
+    width: 25%;
+  }
+
+  .gm4 {
+    float: left;
+    padding: 1.5em;
+    width: 33.33333%;
+  }
+
+  .gm5 {
+    float: left;
+    padding: 1.5em;
+    width: 41.66667%;
+  }
+
+  .gm6 {
+    float: left;
+    padding: 1.5em;
+    width: 50%;
+  }
+
+  .gm7 {
+    float: left;
+    padding: 1.5em;
+    width: 58.33333%;
+  }
+
+  .gm8 {
+    float: left;
+    padding: 1.5em;
+    width: 66.66667%;
+  }
+
+  .gm9 {
+    float: left;
+    padding: 1.5em;
+    width: 75%;
+  }
+
+  .gm10 {
+    float: left;
+    padding: 1.5em;
+    width: 83.33333%;
+  }
+
+  .gm11 {
+    float: left;
+    padding: 1.5em;
+    width: 91.66667%;
+  }
+
+  .gm12 {
+    float: left;
+    padding: 1.5em;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .gs1 {
+    float: left;
+    padding: 1.5em;
+    width: 8.33333%;
+  }
+
+  .gs2 {
+    float: left;
+    padding: 1.5em;
+    width: 16.66667%;
+  }
+
+  .gs3 {
+    float: left;
+    padding: 1.5em;
+    width: 25%;
+  }
+
+  .gs4 {
+    float: left;
+    padding: 1.5em;
+    width: 33.33333%;
+  }
+
+  .gs5 {
+    float: left;
+    padding: 1.5em;
+    width: 41.66667%;
+  }
+
+  .gs6 {
+    float: left;
+    padding: 1.5em;
+    width: 50%;
+  }
+
+  .gs7 {
+    float: left;
+    padding: 1.5em;
+    width: 58.33333%;
+  }
+
+  .gs8 {
+    float: left;
+    padding: 1.5em;
+    width: 66.66667%;
+  }
+
+  .gs9 {
+    float: left;
+    padding: 1.5em;
+    width: 75%;
+  }
+
+  .gs10 {
+    float: left;
+    padding: 1.5em;
+    width: 83.33333%;
+  }
+
+  .gs11 {
+    float: left;
+    padding: 1.5em;
+    width: 91.66667%;
+  }
+
+  .gs12 {
+    float: left;
+    padding: 1.5em;
+    width: 100%;
+  }
+}
+.xp {
+  padding: 0;
+}
+
+.p {
+  padding: 1.5em;
+}
+
+.gc {
+  clear: left;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Utility */
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: left;
+  height: 0;
+  overflow: hidden;
+}
+
+.clear {
+  clear: both;
+}
+
+/*	------------------
+	Aninmation classes
+	---
+	Used in conjunction with the js.animations.js file.
+*/
+.animate {
+  position: relative;
+  transition: all 0.5s ease-out;
+}
+.animate.slide-up {
+  opacity: 0;
+  transform: translateY(3em);
+}
+.animate.slide-up.done {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate.zoom-in {
+  opacity: 0;
+  transform: scale(0.75);
+}
+.animate.zoom-in.done {
+  opacity: 1;
+  transform: scale(1);
+}
+.animate.zoom-out {
+  opacity: 0;
+  transform: scale(1.5);
+}
+.animate.zoom-out.done {
+  opacity: 1;
+  transform: scale(1);
+}
+
+h1.site-title {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.jump-list {
+  display: inline-block;
+  border: 2px solid #ddd;
+  background-color: #fff;
+}
+.jump-list li {
+  list-style: none;
+  margin: 0;
+  position: relative;
+}
+.jump-list li a {
+  display: block;
+  padding: 0.2em 0.75em;
+  font-family: "freight-sans-pro", sans-serif;
+  color: #333;
+  text-decoration: none;
+}
+.jump-list li a:hover {
+  background-color: #e6e6e6;
+}
+.jump-list li ul {
+  display: none;
+}
+.jump-list.open li ul {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-top-width: 1px;
+  transform: translateX(-2px);
+}
+
+#site-header .jump-list {
+  margin-bottom: 0;
+}
+
+.label {
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.label a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
