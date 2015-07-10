@@ -151,7 +151,7 @@ ol.blocked li a {
 }
 ul.blocked li a:hover,
 ol.blocked li a:hover {
-  background-color: #e6e6e6;
+  background-color: #f2f2f2;
 }
 ul.blocked.lined li,
 ol.blocked.lined li {
@@ -209,7 +209,7 @@ blockquote cite:before {
 code, pre {
   padding: 0.2em;
   font-size: 0.8em;
-  background-color: #e6e6e6;
+  background-color: #f2f2f2;
   color: #666666;
 }
 
@@ -336,27 +336,29 @@ fieldset {
   margin: 0 0 1.7em 0;
   padding: 1em 1.25em 1em 1.25em;
   border: 1px solid #ddd;
-  position: relative;
-}
-fieldset legend {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0.5em 1.25em;
-  display: block;
-  font-family: "freight-sans-pro", sans-serif;
-  font-weight: 600;
-  background-color: #e6e6e6;
-}
-fieldset legend + * {
-  margin-top: 2.5em !important;
+  min-width: 0;
 }
 fieldset p {
   margin-bottom: 1em;
 }
 
-.form-item label,
+legend {
+  float: left;
+  width: 100%;
+  padding: 0.5em 1.25em;
+  position: relative;
+  top: -1em;
+  left: -1.25em;
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 600;
+  background-color: #f2f2f2;
+  box-sizing: content-box;
+}
+legend + * {
+  margin-top: 2.5em !important;
+}
+
+label,
 .form-item fieldset legend,
 fieldset.select legend {
   display: block;
@@ -391,10 +393,19 @@ fieldset.select.inline label {
   font-style: italic;
 }
 
-input[type=text],
-input[type=email],
-input[type=number],
-input[type=password],
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
 textarea,
 select {
   max-width: 100%;
@@ -404,10 +415,19 @@ select {
   border: 1px solid #ddd;
   outline: none;
 }
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=number]:focus,
-input[type=password]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
 textarea:focus,
 select:focus {
   border-color: #999;
@@ -415,13 +435,36 @@ select:focus {
 
 input[type=text],
 input[type=email],
-input[type=password] {
+input[type=password],
+input[type=range] {
   width: 24em;
+}
+
+input[size] {
+  width: auto;
 }
 
 select {
   border-radius: 0;
   min-width: 12em;
+}
+
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+input[type=file] {
+  display: block;
+}
+
+input[type=range] {
+  display: block;
+}
+
+input[type=color] {
+  width: 12em;
+  height: 3em;
 }
 
 button,
@@ -430,35 +473,44 @@ input[type=submit],
 input[type=button],
 input[type=reset] {
   display: inline-block;
+  padding: 0.5em 1em 0.4em;
+  border: 0 none;
+  background: #d4443f;
+  font-family: "freight-sans-pro", sans-serif;
+  font-weight: 600;
   font-size: 1em;
   line-height: 1.5em;
-  font-family: "freight-sans-pro", sans-serif;
-  font-weight: 400;
-  padding: 0.5em 1em 0.4em;
   color: #fff;
-  background: #d4443f;
-  border: 0 none;
   cursor: pointer;
-  transition: background-color 0.3s ease-out;
+  box-shadow: 0 0.15em 0.1em rgba(51, 51, 51, 0.2);
+  transition: all 0.3s ease-out;
 }
 button:hover,
 a.button:hover,
 input[type=submit]:hover,
 input[type=button]:hover,
 input[type=reset]:hover {
-  background-color: #c4312c;
+  box-shadow: 0 0.25em 0.1em rgba(51, 51, 51, 0.2);
+}
+button:active,
+a.button:active,
+input[type=submit]:active,
+input[type=button]:active,
+input[type=reset]:active {
+  box-shadow: 0 0 0.1em rgba(51, 51, 51, 0.2);
+}
+button:focus,
+a.button:focus,
+input[type=submit]:focus,
+input[type=button]:focus,
+input[type=reset]:focus {
+  outline: none;
 }
 
 button.reset,
 a.button.reset,
 input[type=reset] {
-  background-color: #d9d9d9;
-  color: #d4443f;
-}
-button.reset:hover,
-a.button.reset:hover,
-input[type=reset]:hover {
-  background-color: #e6e6e6;
+  background-color: #f2f2f2;
   color: #d4443f;
 }
 
@@ -886,7 +938,7 @@ h1.site-title {
   text-decoration: none;
 }
 .jump-list li a:hover {
-  background-color: #e6e6e6;
+  background-color: #f2f2f2;
 }
 .jump-list li ul {
   display: none;
