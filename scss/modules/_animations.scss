@@ -33,3 +33,26 @@
 		}
 	}
 }
+
+.ripple {
+	position:relative;
+	overflow:hidden;
+	.wave {
+		display:block;
+		position:absolute;
+		background:fade-out(darken($accent, 30%), 0.7);
+		border-radius:100%;
+		opacity:1;
+		transform:scale(0);
+		&.activate {
+			animation:ripple 0.7s ease-out;
+		}
+	}
+}
+
+@keyframes ripple {
+	100% {
+		opacity:0;
+		transform:scale(2)
+	}
+}

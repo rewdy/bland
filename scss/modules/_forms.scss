@@ -102,7 +102,7 @@ select {
 // Set default size for standard elements
 input[type=text],
 input[type=email],
-input[type=password], 
+input[type=password],
 input[type=range] {
 	width: 24em;
 }
@@ -175,6 +175,11 @@ input[type=reset] {
 	color:$accent;
 }
 
+a.button,
+button {
+	@extend .ripple;
+}
+
 // some classes for variations
 div.submit {
 	padding-top:1em;
@@ -203,4 +208,3 @@ input.full {
 		width:45%;
 	}
 }
-

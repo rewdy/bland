@@ -314,7 +314,7 @@ figure.right + * {
   text-transform: uppercase;
   font-style: italic;
   color: #fff;
-  background: #1f5c67;
+  background: #205c67;
   background: linear-gradient(to bottom right, #107c7b 0%, #2f3c53 100%);
 }
 @media only screen and (max-width: 640px) {
@@ -915,6 +915,31 @@ input.full {
   transform: scale(1);
 }
 
+.ripple, a.button,
+button {
+  position: relative;
+  overflow: hidden;
+}
+.ripple .wave, a.button .wave,
+button .wave {
+  display: block;
+  position: absolute;
+  background: rgba(100, 25, 22, 0.3);
+  border-radius: 100%;
+  opacity: 1;
+  transform: scale(0);
+}
+.ripple .wave.activate, a.button .wave.activate,
+button .wave.activate {
+  animation: ripple 0.7s ease-out;
+}
+
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
 h1.site-title {
   display: inline-block;
   margin-right: 1em;
